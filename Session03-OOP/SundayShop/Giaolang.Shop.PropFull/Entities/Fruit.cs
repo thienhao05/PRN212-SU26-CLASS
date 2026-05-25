@@ -20,6 +20,7 @@ namespace Giaolang.Shop.PropFull.Entities
 		}
 
 		//prop tab tab
+		//Tìm hiểu thử propfull và prop
 
 	}
 }
