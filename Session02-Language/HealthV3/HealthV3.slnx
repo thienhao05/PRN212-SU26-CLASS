@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Bmi/Bmi.csproj" />
+  <Project Path="BmiTester/BmiTester.csproj" />
+</Solution>

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ParameterIn/ParameterIn.csproj" />
+  <Project Path="ParameterOut/ParameterOut.csproj" />
+  <Project Path="ParameterRef/ParameterRef.csproj" Id="19c61bda-c9f3-4c35-bf82-d952e54f9ce6" />
+</Solution>

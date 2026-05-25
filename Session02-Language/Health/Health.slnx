@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BmiTester/BmiTester.csproj" />
+  <Project Path="BmiTesterV2/BmiTesterV2.csproj" Id="3bf08e06-e221-4921-92a6-8108eeebe8d0" />
+</Solution>
