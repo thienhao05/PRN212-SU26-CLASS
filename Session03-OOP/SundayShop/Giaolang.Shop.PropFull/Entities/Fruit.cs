@@ -21,6 +21,8 @@ namespace Giaolang.Shop.PropFull.Entities
 
 		//prop tab tab
 		//Tìm hiểu thử propfull và prop
+		//propfull sẽ sinh ra _backing field và get set, còn prop chỉ sinh ra get set
+		//propfull sẽ giúp ta có thể tùy chỉnh get set, còn prop thì không thể tùy chỉnh get set, nó chỉ có thể tự động sinh ra get set
 
 	}
 }
