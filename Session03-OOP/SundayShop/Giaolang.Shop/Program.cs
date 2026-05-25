@@ -38,7 +38,7 @@ namespace Giaolang.Shop
 
             Console.WriteLine("DU details: " + du.ToString());
 
-            cau.SetId("MC");
+            cau.SetId("MC"); // _id = id đưa vào
             cau.SetDesc("MÃNG CẦU LÀ ĐẦU CÂU CHUYỆN...");
             cau.SetName("MÃNG CẦU");
             cau.SetPrice(4.0);
@@ -66,3 +66,67 @@ namespace Giaolang.Shop
         }
     }
 }
+
+//GET, SET, TOSTRING(), CONSTRUCTOR LÀ NHỮNG ĐOẠN CODE 
+//BẮT BUỘC PHẢI LÀM, NHƯNG NHÀM CHÁN
+//DỄ HIỂU, KO KHÓ ĐỂ LÀM, KO GÌ MỚI MẺ, NHƯNG PHẢI LÀM
+//ĐỂ OBJECT TRỞ NÊN TRỌN VẸN HOÀN HẢO: TẠO, XEM, SỬA
+//NHÀM CHÁN NHƯNG PHẢI LÀM => BOILDER-PLATE
+//C# GIỚI THIỆU 1 CÁCH VIẾT CODE MỚI ĐỂ ĐẢM BẢO 
+//CLASS VẪN CÓ CODE NHÀM CHÁN NHƯNG KO CẦN TRỰC TIẾP VIẾT RA
+//KĨ THUẬT NÀY GỌI LÀ: PROPERTY
+//NATIVE CÓ SẴN TRONG C#
+
+//JAVA KO CÓ CÁI NÀY SẴN TRONG JDK MÀ PHẢI XÀI THƯ VIỆN BÊN NGOÀI, HÃNG THỨ 3
+//ĐÓ CHÍNH LÀ LOMBOK!!!!!!!!!!!!!!!!
+
+/*
+ PHÂN TÍCH
+-----------------------
+public class Fruit 
+{
+    private string _id;
+    private string _name;
+    
+    public string GetName(){
+        return _name; // có cần 1 hàm rườm rà hay ko, ném thẳng _name cx okie về Get()
+    }
+
+    public void SetName(string newName)
+    {
+        _name = newName;
+    }
+    
+}
+
+//XÉT 1 BIẾN NĂM SINH LƯU NĂM SINH CỦA BẠN - KO DÍNH C#
+
+int yob = 2005;
+
+//tui mún lấy giá trị của yob và in ra: 
+//TÊN BIẾN CHÍNH LÀ GET
+sout(yob);
+cw(yob);
+printf("%d", yob);
+
+
+//tui mún thay đổi giá trị yob thành 2008
+
+yob = 2008;
+//TÊN BIẾN =        CHÍNH LÀ SET, THAY ĐỔI GIÁ TRỊ
+
+CHỐT HẠ: 
+1 BIẾN ĐÃ BAO GỒM SẴN TRONG NÓ 2 KHÁI NIỆM GET, SET
+- TÊN BIẾN -> CHÍNH LÀ VALUE, LÀ GET
+- TÊN BIẾN  = ??? CHÍNH LÀ SET VALUE MỚI CHO BIẾN
+
+public class Fruit 
+{
+    public string _id;
+    public string _name;  
+}
+
+Fruit cau = new Fruit();
+cau._name = "MÃNG CẦU";
+  
+ */
