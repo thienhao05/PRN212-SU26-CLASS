@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="Giaolang.Shop.Prop/Giaolang.Shop.Prop.csproj" Id="eb2c0974-ca21-481d-b7b8-5982c3f1c28d" />
+  <Project Path="Giaolang.Shop.PropAuto/Giaolang.Shop.PropAuto.csproj" Id="9ac1c70d-3f0e-41a1-87ec-03ac1eac8470" />
   <Project Path="Giaolang.Shop.Property/Giaolang.Shop.Encapsulation.csproj" Id="dae38223-1d54-491c-8ab6-a0fe9448ba87" />
   <Project Path="Giaolang.Shop.PropFull/Giaolang.Shop.PropFull.csproj" Id="7fb9282d-d2fe-47d6-b9dd-979f60f5f242" />
   <Project Path="Giaolang.Shop/Giaolang.Shop.csproj" />
