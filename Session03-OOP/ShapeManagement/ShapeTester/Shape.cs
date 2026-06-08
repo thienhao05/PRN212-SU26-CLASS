@@ -14,8 +14,8 @@ namespace ShapeTester
         public string Color { get; set; }
 
         //hàm ko có code để đám con implement giùm
-        protected Shape(string color)
-        {
+        protected Shape(string color) //đối với Con, là super(), base()
+        {                             //chính là tham chiếu đến ctor của Cha
             Color = color;
         }
 
