@@ -1,0 +1,52 @@
+﻿<Application x:Class="Giaolang.DieuDao.GUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Giaolang.DieuDao.GUI"
+             StartupUri="LoginWindow.xaml">
+    <Application.Resources>
+        <!-- Nơi khai báo CSS cho dàn UI: Button, Label, ReadioButton
+             Data Grid, ...
+             Bản chất của CSS chính là thiết lập các Prop/Property với 
+                giá trị sẵn có và áp nó cho 1 loạt các UI tương ứng 
+            Chính là gọi các hàm SetX() của Button, Lable, RadioButton,...
+            CSS: Casede Style Sheets
+        -->
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#b22222"/>
+            <Setter Property="Foreground" Value="#ffff00"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Heavy"/>
+        </Style>
+
+        <Style x:Key="LimeButton" TargetType="Button">
+            <Setter Property="Background" Value="#39ff14"/>
+            <Setter Property="Foreground" Value="#b22222"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Heavy"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#ffff00"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="HeaderLabel" TargetType="Label">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#ffff00"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontWeight" Value="Heavy"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#b22222"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+
+    </Application.Resources>
+</Application>
