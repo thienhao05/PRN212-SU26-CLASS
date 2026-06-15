@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Giaolang.DieuDao.GUI.Entities;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -30,6 +31,36 @@ namespace Giaolang.DieuDao.GUI
             { 
                 Application.Current.Shutdown();
             }
+        }
+
+        private void LoadDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            //chuẩn bị data đổ vào data grid
+            List<Fruit> list = new List<Fruit>();
+            list.Add(new Fruit() {
+                Id = "MC",
+                Name = "Mãng Cầu",
+                Desc = "Mãng cầu là...",
+                Price = 5.0
+            });
+
+            list.Add(new Fruit()
+            {
+                Id = "SS",
+                Name = "Sung Sướng",
+                Desc = "Trái sung là...",
+                Price = 6.0
+            });
+
+            list.Add(new Fruit()
+            {
+                Id = "DD",
+                Name = "Dừa",
+                Desc = "Dừa dừa cx cx là...",
+                Price = 7.0
+            });
+
+            FruitDataGrid.ItemsSource = list;
         }
     }
 }

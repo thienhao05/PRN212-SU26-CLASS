@@ -7,9 +7,14 @@
         mc:Ignorable="d"
         Title="Shop Điều Đào" Height="400" Width="800" Background="#ff4500" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="31" Margin="54,49,0,0" VerticalAlignment="Top" Width="194" Click="QuitButton_Click"/>
-        <Button x:Name="LoadDataButton" Content="Load Data" HorizontalAlignment="Left" Height="31" Margin="302,49,0,0" VerticalAlignment="Top" Width="153"/>
-        <DataGrid x:Name="FruitDataGrid" HorizontalAlignment="Left" Height="126" Margin="54,133,0,0" VerticalAlignment="Top" Width="433" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="31" Margin="631,74,0,0" VerticalAlignment="Top" Width="123" Click="QuitButton_Click"/>
+        <Button x:Name="LoadDataButton" Content="Load Data" HorizontalAlignment="Left" Height="31" Margin="631,31,0,0" VerticalAlignment="Top" Width="123" Click="LoadDataButton_Click"/>
+        <DataGrid x:Name="FruitDataGrid" HorizontalAlignment="Left" Height="150" Margin="34,192,0,0" VerticalAlignment="Top" Width="483" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="44" Margin="544,199,0,0" VerticalAlignment="Top" Width="183" Style="{StaticResource LimeButton}"/>
+
+        <Label Content="Shop Điều Đào" HorizontalAlignment="Left" Height="80" Margin="19,10,0,0" VerticalAlignment="Top" Width="402" Style="{StaticResource HeaderLabel}"/>
+
 
 
     </Grid>
