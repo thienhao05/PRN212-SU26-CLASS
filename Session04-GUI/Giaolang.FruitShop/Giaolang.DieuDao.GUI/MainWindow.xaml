@@ -5,15 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Giaolang.DieuDao.GUI"
         mc:Ignorable="d"
-        Title="Shop Điều Đào" Height="400" Width="800" Background="#ff4500" WindowStartupLocation="CenterScreen">
+        Title="Shop Điều Đào" Height="400" Width="800" Background="#ff4500" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="31" Margin="631,74,0,0" VerticalAlignment="Top" Width="123" Click="QuitButton_Click"/>
         <Button x:Name="LoadDataButton" Content="Load Data" HorizontalAlignment="Left" Height="31" Margin="631,31,0,0" VerticalAlignment="Top" Width="123" Click="LoadDataButton_Click"/>
-        <DataGrid x:Name="FruitDataGrid" HorizontalAlignment="Left" Height="150" Margin="34,192,0,0" VerticalAlignment="Top" Width="483" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
-        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="44" Margin="544,199,0,0" VerticalAlignment="Top" Width="183" Style="{StaticResource LimeButton}"/>
+        <DataGrid x:Name="FruitDataGrid" HorizontalAlignment="Left" Height="150" Margin="34,192,0,0" VerticalAlignment="Top" Width="483" AutoGenerateColumns="False">
+            <!-- ta định nghĩa các cột theo nhu cầu riêng ở đây -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="STT" Width="50" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Tên trái" Width="120" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Mô tả" Width="200" Binding="{Binding Desc}" />
+                <DataGridTextColumn Header="Giá" Width="70" Binding="{Binding Price}" />
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="44" Margin="556,136,0,0" VerticalAlignment="Top" Width="136" Style="{StaticResource LimeButton}"/>
 
         <Label Content="Shop Điều Đào" HorizontalAlignment="Left" Height="80" Margin="19,10,0,0" VerticalAlignment="Top" Width="402" Style="{StaticResource HeaderLabel}"/>
+        <Button x:Name="EditButton" Content="Edit" HorizontalAlignment="Left" Height="44" Margin="556,204,0,0" VerticalAlignment="Top" Width="136" Style="{StaticResource LimeButton}" Click="EditButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Height="44" Margin="556,267,0,0" VerticalAlignment="Top" Width="136" Style="{StaticResource LimeButton}" Click="DeleteButton_Click"/>
 
 
 

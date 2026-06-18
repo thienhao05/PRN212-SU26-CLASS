@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Giaolang.DieuDao.GUI"
-             StartupUri="LoginWindow.xaml">
+             StartupUri="MainWindow.xaml"> 
+    <!-- Gọi từ Login sang -->
     <Application.Resources>
         <!-- Nơi khai báo CSS cho dàn UI: Button, Label, ReadioButton
              Data Grid, ...
