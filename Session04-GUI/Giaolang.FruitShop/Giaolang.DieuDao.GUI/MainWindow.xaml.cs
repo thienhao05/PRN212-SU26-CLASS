@@ -145,6 +145,12 @@ namespace Giaolang.DieuDao.GUI
             detail.EditedOne = chosenOne;
             detail.ShowDialog();
         }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            DetailWindow detail = new();
+            detail.ShowDialog();
+        }
     }
 }
 

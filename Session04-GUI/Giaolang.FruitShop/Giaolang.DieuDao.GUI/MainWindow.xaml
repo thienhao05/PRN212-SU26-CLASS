@@ -23,7 +23,7 @@
         </DataGrid>
 
 
-        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="44" Margin="556,136,0,0" VerticalAlignment="Top" Width="136" Style="{StaticResource LimeButton}"/>
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="44" Margin="556,136,0,0" VerticalAlignment="Top" Width="136" Style="{StaticResource LimeButton}" Click="CreateButton_Click"/>
 
         <Label Content="Shop Điều Đào" HorizontalAlignment="Left" Height="80" Margin="19,10,0,0" VerticalAlignment="Top" Width="402" Style="{StaticResource HeaderLabel}"/>
         <Button x:Name="EditButton" Content="Edit" HorizontalAlignment="Left" Height="44" Margin="556,204,0,0" VerticalAlignment="Top" Width="136" Style="{StaticResource LimeButton}" Click="EditButton_Click"/>
