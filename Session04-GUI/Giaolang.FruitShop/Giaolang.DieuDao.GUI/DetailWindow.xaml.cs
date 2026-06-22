@@ -46,7 +46,7 @@ namespace Giaolang.DieuDao.GUI
             }
 
             //dù new hay edit mode đều phải đổ vào ôn chọn category
-            List<Category> cates = new List<Category>(); //chuẩn bị danh sách Category, lẽ ra đcọ từ table, làm sau !!!
+            List<Category> cates = new List<Category>(); //chuẩn bị danh sách Category, lẽ ra đọc từ table, làm sau !!!
             cates.Add(new Category()
             {
                 Id = "1",

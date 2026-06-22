@@ -1,0 +1,22 @@
+LỆNH QUAN TRỌNG, ĐỨNG Ở CMD NÀO GÕ CŨNG ĐƯỢC
+VÀO PHÒNG THI KO CẦN GÕ LẠI LỆNH NÀY, VÌ TOOL CÀI RỒI 
+TOOL GIÚP TA GENERATE NGƯỢC TỪ TABLE THÀNH CLASS
+dotnet tool install --global dotnet-ef --version 10.*
+
+- Add 4 thư viện
+- Microsoft.EntityFrameworkCore
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Tools
+- Microsoft.EntityFrameworkCore.Design
+
+* Menu Build | Build Solution => KO LÀM BƯỚC NÀY, HẸN KÌ TỚI!!!!!!!!
+
+* Phải chuột trên Project | Open in Terminal
+  kiểm tra dấu nhắc lệnh coi mình đứng đúng thư mục 
+project chưa 
+  dán lệnh ở dưới và cầu nguyện
+
+
+
+
+dotnet ef dbcontext scaffold "Server=(local);uid=sa;pwd=12345;database= SU26_DieuDao;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer --output-dir Entities --context-dir .\
