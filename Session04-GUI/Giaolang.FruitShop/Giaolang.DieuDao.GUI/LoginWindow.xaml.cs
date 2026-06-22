@@ -50,7 +50,7 @@ namespace Giaolang.DieuDao.GUI
             //MessageBox.Show(msg);
 
             //vào db, thấy 1 dòng match, mời vào màn hình MainWindow
-            if(email == "nt" && password == "iloveyou")
+            if(email == "nt" && password == "tr")
             {
                 //mời vào main, mỗi cửa sổ là 1 class, new và render
                 MainWindow main = new(); //ăn bớt vế phải
