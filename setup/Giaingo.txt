@@ -1,0 +1,134 @@
+======================================
+GIẢI NGỐ KẾT NỐI CSDL VỚI SQL SERVER
+======================================
+0. SETUP SQL SERVER - CẤU HÌNH SQL SERVER
+* SỬ DỤNG 2 TOOLS: 
+- SQL SERVER MANAGEMENT STUDIO
+- SQL SERVER CONFIGURATION MANAGER (https://github.com/doit-now/c-sharp-craftsman/blob/main/hands-on/SQL%20Server%20Configuration.txt
+)
+
+> SQL SERVER MANAGEMENT STUDIO *********************************
+- LOGIN VỚI QUYỀN WINDOWS AUTHENTICATION
+* SETTING USER SA ************
+- CHỌN SECURITY | LOGINS | SA | NHÁY CHUỘT TRÁI 2 LẦN SA
+- CHỌN MỤC STATUS, TÍCH VÀO (o) GRAND VÀ (o) ENABLE ĐỂ CHO PHÉP LOGIN VÀO SQL SERVER BẰNG USER SA (SYSTEM ADMIN)
+- CHỌN MỤC GENERALS ĐỂ ĐỔI PASSWORD, RETYPE
+- OK TẮT MÀN HÌNH
+
+* SETTING CÁC KẾT NỐI VÀO SQL SERVER
+- CÓ 2 CÁCH KẾT NỐI VÀO SQL SERVER
+     - DÙNG QUYỀN WINDOWS ĐỂ VÀO - WINDOWS AUTHENTICATION, MÌNH ĐANG DÙNG 
+     - DÙNG MIXED MODE, WINDOWS AUTHEN VÀ USER SA CẢ 2 ĐỀU ĐƯỢC
+- CẤU HÌNH MIX MODE NHƯ SAU: 
+- PHẢI CHUỘT VÀO CONNECTION TRÊN MÀN HÌNH | PROPERTIES
+  CHỌN MỤC SECURITY | TÍCH OPTION (o) SQL Server and Window Authen mode
+- PHẢI CHUỘT TRÊN CONNECTION, CHỌN RESTART SERVER (KO PHẢI CHỌN DISCONNECT, CONNECT LẠI)
+- ĐỂ SERVER GHI NHẬN NHỮNG THAY ĐỔI VỀ USER SA VÀ CÁCH CONNECT TỚI NÓ
+
+* TEST THỬ CONNECT
+- DISCONECT KẾT NỐI = NHẤN NÚT RÚT Ổ CẮM
+- KẾT NỐI LẠI BẰNG NÚT PHÍCH CẮM, NHẤN CHỌN SQL SERVER AUNTHENTICATION VÀ NHẬP USER sa, PASSWORD VỪA ĐỔI, TÍCH CHỌN [X]
+TRUST SERVER CERFIFICATE 
+CONNECT THÀNH CÔNG
+
+
+>>>>>>>>> SQL SERVER CONFIGURATION MANAGER >>>>>>>>>>>>>>>
+
+- ĐÂY LÀ APP GIÚP TA SETUP PORT, CHO PHÉP TA TRUY XUẤT VÀO SQL SERVER TỪ CODE, TỪ APP KHÁC!!!!!!!
+- CẤU HÌNH GIAO THỨC TCP/IP (TRUYỀN DỮ LIỆU QUA MẠNG)
+- CẤU HÌNH CỔNG LẮNG NGHE: ĐẶT MÃ SỐ CHO APP (0...06555365 = 2^16"
+1433 LÀ MẶC ĐỊNH DÀNH CHO SQL SERVER
+
+* CÓ NHIỀU CÁCH SỜ APP NÀY
+- GÕ CONFI Ở Ô SERARCH KẾ BÊN BIỂU TƯỢNG WINDOWS Ở THANH TASKBAR
+- CHỌNG TÊN APP ĐỀ XUẤT: SQL SERVER XXX CONFIGUARATION MANAGER
+
+- NẾU KO XỔ, THÌ PHẢI CHUẬT TRÊN BIỂU TƯỢNG WINDOWS, CHỌN RUN, GÕ SQLServerManager16.msc (11, 12, 13, 14, 15, 16)
+
+- CÁCH 3: MẤT CÔNG HƠN, TÌM XEM NÓ Ở ĐÂU TRÊN Ổ ĐĨA
+C:\Windows\SysWOW64\SQLServerManager1X.msc
+NHÁY CHUỘT TRÁI 2 LẦN VÀO NÓ 
+TẠO LUÔN SHORT-CUT, ĐƯỜNG DẪN TẮT ĐẾN THẰNG NÀY ĐỂ TRIỆU HỒN NÓ CHO DỄ PHẢI CHUỘT TRÊN DESKTOP - NEW -> SHORTCUT -> TRỎ ĐẾN SYSWOW64 Ở TRÊN TRỎ ĐẾN .MSC Ở TRÊN | NEXT | ĐẶT TRÊN THÀNH LMHT | OKIE
+
+* CẤU HÌNH PORT, TCP
+- MỞ APP CONFIGURATION, TÌM MỤC SQL SERVER NETWORK CONFIGURATION
+		> CHỌN MỤC PROTOCOLS - CÁCH THỨC GIAO TIẾP
+		
+		> CHỌN TCP/IP PHẢI CHUỘT ENABLE!!!!!!!!!!!!!!!
+		
+		> NHÁY CHUỘT TRÁI 2 LẦN VÀO TCP/IP CHỌN IP ADDRESSES
+		  KÉO XUỐNG CUỐI ĐÁY, CHỌN MỤC IP ALL, TCP PORT 1433
+					KO CHỌN GÕ MỤC DYNAMIC NHEN!!!
+* >>>>>>>>>>> NHỚ KHỞI ĐỘNG LẠI SERVER THÌ MỚI CÓ HIỆU LỰC
+SẴN SÀNG VÀO CODE!!!!!!!!!!!!!!!!!!
+
+SẴN SÀNG GÕ CÂU SQL TỪ CODE, TỪ CHÍNH VISUAL STUDIO, MÀ KO THÈM CẦN SQL SERVER MANAGEMENT STUDIO
+
+
+
+I. KẾT NỐI C# VỚI SQL SERVER - BÀI PE ĐÓ EM!!!
+1. CẦN CÀI 4 THƯ VIỆN ORM - OBJECT RELATIONAL MAPPING
+- BỘ THƯ VIỆN GIÚP LÀM VIỆC VỚI TABLE (RELATION) MÀ KO THEM VIẾT CÂU SQL, CHỈ DÙNG CLASS, CLASS, CLASS (OBJECT) GỌI LÀ ORM 
+  - C#: TÊN THƯ VIỆN LÀ EFCORE - ENTITY FRAMEWORK CORE - HÀNG CHÍNH HÃNG
+ 	DAPPER - HÀNG MÃ NGUỒN MỞ
+
+  - JAVA: HIBERNATE
+
+- PHẢI CHUỘT VÀO PROJECT (KO PHẢI CHUỘT VÀO SOLUTION) 
+CHỌN DEPENDENCIES | MANAGE NUGET PACKAGES 
+CHỌN TAB BROWSE, GÕ TÌM 4 DEPENDENCY
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.Design
+
+CHỌN NÚT INSTALL, ĐOẠN NÀY BẮT BUỘC PHẢI VÀO WIFI PHÒNG THI!!!!
+KHẢO THÍ CANH THI BIẾT ĐIỀU NÀY!!!!!!!!!!!!
+
+* QUAN TRỌNG, RẤT RẤT QUAN TRỌNG
+MENU BUILD | BUILD HOẶC REBUILD SOLUTION
+
+NẾU KO LÀM BƯỚC NÀY, KO CẬP NHẬT THƯ VIỆN CHO TOOL, LÁT GÕ LỆNH BÁO LỖI!!!!!!!!!
+
+* GENERATE ENTITY CLASS SUY NGƯỢC TỪ TABLE -> DATABASE FIRST
+
+----------
+> TỪ CLASS MÀ RA TABLE (KO CHƠI CÂU SQL, CHỈ ORM) -> CODE FIRST
+					(THÍCH CODE, CODE, TABLE TỰ SINH)
+
+> TỪ TABLE CÓ SẴN, SUY NGƯỢC RA CLASS (KO CHƠI SQL, CHỈ ORM) -> DB FIRST 
+					 (CÓ SẴN DB RỒI VÌ LỠ YÊU ERD RỒI)
+
+SAU ĐÓ VẪN PHẢI CODE NHƯ BÌNH THƯỜNG
+
+> PHẢI CHUỘT TRÊN PROJECT | OPEN IN TERMINAL | CHÝ Ý NHẮC LỆNH TRÊN CỬA SỔ 
+POWERSHELL PS >_ CÓ ĐÚNG TÊN PROJECT HAY KO, VÌ SAI NƠI ĐỨNG LÀ MÉO GÌ CÓ THƯ VIỆN MÀ GENERATE
+DÁN CÂU LỆNH ĐỀ THI PE ĐÃ CHO, HOẶC LỚP MÌNH ĐÃ CÓ LỆNH
+
+https://github.com/doit-now/c-sharp-craftsman/blob/main/hands-on/SQL%20Server%20Database%20Connection.docx
+
+
+dotnet ef dbcontext scaffold "Server=MSI\SQLEXPRESS22;uid=sa;pwd=12345;database= SU26_DieuDao;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer --output-dir Entities --context-dir .\
+
+CHẠY LỆNH DÀI DÀI Ở TRONG TERMINAL CỦA PROJECT 
+VÀ CẦU NGUYỆN
+
+> -----------------------------------------
+TRƯỚC KHI CHẠY LỆNH TRÊN, CẦN CÀI THÊM TOOL CLI (COMMAND LINE INTERFACE) EFCORE
+CÀI 1 LẦN DUY NHẤT Ở NHÀ, VÀO PHÒNG THI KO CẦN
+dotnet tool install --global dotnet-ef --version 10.*
+
+CHECK TOOL ĐÃ CÓ CHƯA, GÕ LỆNH
+dotnet tool list --global
+
+--------------------------------
+MÁY 1 SỐ BẠN KO CHỊU CHỮ LOCAL DO CÀI NHIỀU SQL SERVER!!!
+--------------------------------
+ĐỀ THI SẼ CHO TÊN DATABASE, PHẢI DÙNG TÊN NÀY ĐỂ SỬA VÀO CHUỖI CONNECTION Ở TRÊN
+--------------------------------
+
+
+
+(NUTGET ~ NPM ~ MVN)
+	           
