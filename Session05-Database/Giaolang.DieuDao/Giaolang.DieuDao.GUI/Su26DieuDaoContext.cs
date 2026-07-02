@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Giaolang.DieuDao.GUI;
 
+//                  Dog      extends Pet
 public partial class Su26DieuDaoContext : DbContext
 {
     public Su26DieuDaoContext()
@@ -16,12 +17,26 @@ public partial class Su26DieuDaoContext : DbContext
     {
     }
 
+    //class quan trọng nhất khi chơi với DB
+    //class này chứa các ArrayList<Entity class Fruit, Category, Student, Major>
+    //Đằng sau chính là biến _backingField có 2 hàm get set
+    //         List<Category> _categories = new ArrayList<>();
+    //                        thằng này chính là ứng với SELECT * FROM CATEGORY
+
     public virtual DbSet<Category> Categories { get; set; }
 
+    //         List<Fruit> _fruits = new ArrayList<>();
+    //                        thằng này chính là ứng với SELECT * FROM FRUIT
+
+    //CHỐT HẠ: CÓ BAO NHIÊU TABLE, CÓ BẤY NHIÊU ENTITY CLASS VÀ CÓ BẤY NHIÊU LIST<ENTITY> Ở ĐÂY
+    //VẬY TA MUỐN LẤY FULL DATA CỦA 1 TABLE, TA CHỈ VIỆC GET BIẾN BACKING FIELD HOẶC DÙNG .PROPETIES TƯƠNG ỨNG VÌ CHÍNH LÀ LSIT
+    //lấy hết trái cây trong table Fruit, là .Fruits, hoặc cũ: getFruit() return List
+    //          category trong table Category, là .Categories, hoặc cũ .getCategories()
+    //                                                                  return List
     public virtual DbSet<Fruit> Fruits { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+
         => optionsBuilder.UseSqlServer("Server=MSI\\SQLEXPRESS22;uid=sa;pwd=12345;database= SU26_DieuDao;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
