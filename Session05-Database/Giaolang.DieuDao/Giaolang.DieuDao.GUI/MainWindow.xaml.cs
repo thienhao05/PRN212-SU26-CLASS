@@ -63,5 +63,43 @@ namespace Giaolang.DieuDao.GUI
             FruitsDataGrid.ItemsSource = null; //xóa
             FruitsDataGrid.ItemsSource = _ctx.Fruits.Include("Category").ToList();
         }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            //show màn hình DetailWindow trống trơn !!!
+            //new Class và .Show()  .ShowDiaLog()
+            DetailWindow detail = new();
+
+            //VÀO MODE NEW
+            detail.ShowDialog();
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            Fruit? selectedOne = FruitsDataGrid.SelectedItem as Fruit;
+
+            //chửi vì chưa chọn
+            if (selectedOne == null)
+            {
+                MessageBox.Show("Please select a fruit before editing", "Select!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return; //thoát luôn
+            }
+
+            //gửi dòng này sang màn hình detail!!!!
+            //màn hình detail vào mode edit
+            DetailWindow detail = new();
+            detail.EditedOne = selectedOne;
+
+
+            //VÀO MODE EDIT, ĐI KÈM SELECTED-ONE
+            detail.ShowDialog(); //ĐÓNG MÀN HÌNH EDIT THÌ PHẢI F5 GRID
+
+            //F5 CÁI GRID
+            _ctx = new();
+            FruitsDataGrid.ItemsSource = null; //xóa
+            FruitsDataGrid.ItemsSource = _ctx.Fruits.Include("Category").ToList();
+
+
+        }
     }
 }
