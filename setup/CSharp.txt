@@ -1,0 +1,3 @@
+https://github.com/doit-now/c-sharp-craftsman/blob/main/hands-on/DieuDao.sql
+
+https://github.com/doit-now/c-sharp-craftsman/blob/main/hands-on/SQL%20Server%20Database%20Connection.docx
