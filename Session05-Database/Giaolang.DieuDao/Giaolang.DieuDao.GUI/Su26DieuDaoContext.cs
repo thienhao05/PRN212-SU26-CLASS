@@ -37,7 +37,7 @@ public partial class Su26DieuDaoContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
-        => optionsBuilder.UseSqlServer("Server=MSI\\SQLEXPRESS22;uid=sa;pwd=12345;database= SU26_DieuDao;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345;database= SU26_DieuDao;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

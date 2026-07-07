@@ -5,7 +5,7 @@ namespace Giaolang.DieuDao.GUI.Entities;
 
 public partial class Fruit
 {
-    public int Id { get; set; }
+    public int? Id { get; set; }
 
     public string Name { get; set; } = null!;
 
