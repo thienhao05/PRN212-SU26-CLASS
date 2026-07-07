@@ -17,6 +17,4 @@ project chưa
   dán lệnh ở dưới và cầu nguyện
 
 
-
-
 dotnet ef dbcontext scaffold "Server=(local);uid=sa;pwd=12345;database= SU26_DieuDao;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer --output-dir Entities --context-dir .\

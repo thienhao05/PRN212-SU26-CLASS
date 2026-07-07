@@ -13,7 +13,13 @@ public partial class Fruit
 
     public decimal Price { get; set; }
 
-    public int CategoryId { get; set; }
+    public int CategoryId { get; set; } //cột FK góc nhìn DB
 
     public virtual Category Category { get; set; } = null!;
+    //             Major    major; (id, name, desc)
+    //             góc nhìn object. Tui, Bạn, có Ba, Má (id, name, ....)
+
+    //Book { id, title, pages, nxb, price, author_id (FK), Author author }
+
+
 }
