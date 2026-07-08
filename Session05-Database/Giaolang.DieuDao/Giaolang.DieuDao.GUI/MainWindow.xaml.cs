@@ -72,6 +72,10 @@ namespace Giaolang.DieuDao.GUI
 
             //VÀO MODE NEW
             detail.ShowDialog();
+            //F5 CÁI GRID
+            _ctx = new();
+            FruitsDataGrid.ItemsSource = null; //xóa
+            FruitsDataGrid.ItemsSource = _ctx.Fruits.Include("Category").ToList();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
