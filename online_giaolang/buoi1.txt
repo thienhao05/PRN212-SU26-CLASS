@@ -1,0 +1,227 @@
+spi-addt-gsk
+
+(FU HCM - GV) Nguyễn Thế Hoàng
+3:01 PM
+CHÀO CẢ NHÀ, CẢ NHÀ CHỜ THÊM VÀI PHÚT XEM CÓ THÊM A E NÀO KO RỒI TA BẮT ĐẦU
+keep
+Pinned
+
+(FU HCM - GV) Nguyễn Thế Hoàng
+3:03 PM
+https://github.com/doit-now/c-sharp-craftsman/blob/main/hands-on.26.su/Giaolang.DieuDao.zip
+keep
+Pinned
+a e nào chưa có code lấy code này về chạy
+keep
+Pinned
+
+Trường An
+3:42 PM
+dạ rồi thầy
+
+Kiệt Đặng Tuấn
+3:42 PM
+dạ rồi ạ
+
+(FU HCM - GV) Nguyễn Thế Hoàng
+3:51 PM
+update Fruit set category_id = 1 where id >= 5
+keep
+Pinned
+
+van tuong
+3:54 PM
+vuiiiiiiiiiii
+
+AnKhang Pham
+4:13 PM
+chạy đc thầy
+
+Trường An
+4:13 PM
+có thầy
+
+Kiệt Đặng Tuấn
+4:13 PM
+dạ có
+
+Nguyễn Trọng Tín
+4:14 PM
+Có thầy
+
+Ho Thanh Phuong (K18 HCM)
+4:14 PM
+có thầy ơi
+
+Đăng Anh Trương Hồ
+4:14 PM
+dạ cò
+
+Trường An
+4:14 PM
+cho em hỏi phần code id tự tăng ở đâu z thầy
+
+Ho Thanh Phuong (K18 HCM)
+4:14 PM
+dạ chắc
+
+(FU HCM - GV) Nguyễn Thế Hoàng
+4:14 PM
+https://github.com/doit-now/c-sharp-craftsman/blob/main/hands-on/DieuDao.sql
+
+Vương Quân
+4:23 PM
+Dạ :)))
+
+(FU HCM - GV) Nguyễn Thế Hoàng
+4:48 PM
+public bool ValidateForm()
+{
+    //kiểm tra từng o nhập, coi có gõ gì ko, sai đến đâu chửi đến đó
+    //và return false luôn dọc đường
+    if (string.IsNullOrWhiteSpace(NameTextBox.Text.Trim()))
+    {
+        MessageBox.Show("Name is required", "Required", MessageBoxButton.OK, MessageBoxImage.Error);
+        return false;
+    }
+
+    if (string.IsNullOrWhiteSpace(DescTextBox.Text.Trim()))
+    {
+        MessageBox.Show("Description is required", "Required", MessageBoxButton.OK, MessageBoxImage.Error);
+        return false;
+    }
+
+    //lưu ý: Java: Integer.parse(chuỗi-dạng-số) convert thành công từ text thành số
+    //       C#:  int.Parse(chuỗi-dạng-số) convert thành công từ text số
+    //            Đều bị Exception nếu đưa Ahihi, text ko là số!!!
+    //C# có thêm bool int.TryParse(text-số)   bool double.TryParse(text-số)  long.TryParse() 
+    //            nếu convert ko thành công, thì ko ném ngoại lệ, chỉ báo true false
+    //OUT REF
+
+    //bắt lỗi nhập số mà lại gõ ahihi ngọc trinh
+    //decimal price;
+    //bool status = decimal.TryParse(PriceTextBox.Text.Trim(), out price);
+
+    bool status = decimal.TryParse(PriceTextBox.Text.Trim(), out decimal price); //khai báo inline
+    //status == true, convert thành công, và price chính là price nhập vào từ ô text
+    //status == false, convert ko thành công, biến price ko care
+    //          chửi message
+    if (status == false)
+    {
+        MessageBox.Show("Price must be a decimal number, e.g 3.14; 60.68", "Required", MessageBoxButton.OK, MessageBoxImage.Error);
+        return false;
+    }
+
+    return true;
+
+}
+keep
+Pinned
+
+(FU HCM - GV) Nguyễn Thế Hoàng
+4:56 PM
+public bool ValidateForm()
+{
+    //kiểm tra từng o nhập, coi có gõ gì ko, sai đến đâu chửi đến đó
+    //và return false luôn dọc đường
+    if (string.IsNullOrWhiteSpace(NameTextBox.Text.Trim()))
+    {
+        MessageBox.Show("Name is required", "Required", MessageBoxButton.OK, MessageBoxImage.Error);
+        return false;
+    }
+
+    if (string.IsNullOrWhiteSpace(DescTextBox.Text.Trim()))
+    {
+        MessageBox.Show("Description is required", "Required", MessageBoxButton.OK, MessageBoxImage.Error);
+        return false;
+    }
+
+    //lưu ý: Java: Integer.parse(chuỗi-dạng-số) convert thành công từ text thành số
+    //       C#:  int.Parse(chuỗi-dạng-số) convert thành công từ text số
+    //            Đều bị Exception nếu đưa Ahihi, text ko là số!!!
+    //C# có thêm bool int.TryParse(text-số)   bool double.TryParse(text-số)  long.TryParse() 
+    //            nếu convert ko thành công, thì ko ném ngoại lệ, chỉ báo true false
+    //OUT REF
+
+    //bắt lỗi nhập số mà lại gõ ahihi ngọc trinh
+    //decimal price;
+    //bool status = decimal.TryParse(PriceTextBox.Text.Trim(), out price);
+
+    bool status = decimal.TryParse(PriceTextBox.Text.Trim(), out decimal price); //khai báo inline
+    //status == true, convert thành công, và price chính là price nhập vào từ ô text
+    //status == false, convert ko thành công, biến price ko care
+    //          chửi message
+    if (status == false)
+    {
+        MessageBox.Show("Price must be a decimal number, e.g 3.14; 60.68", "Required", MessageBoxButton.OK, MessageBoxImage.Error);
+        return false;
+    }
+
+    //chặn chọn combobox, ít nhất trong create mode
+    if (CateComboBox.SelectedItem == null)
+    {
+        MessageBox.Show("Atleast one category must be selected!", "Required", MessageBoxButton.OK, MessageBoxImage.Error);
+        return false;
+    }
+
+
+    return true;
+
+}
+
+private void SaveButton_Click(object sender, RoutedEventArgs e)
+{
+
+    if (ValidateForm() == false) {
+        return;
+    }
+
+   //gọi hàm Add() hay Update() tuỳ mode màn hình
+    //ta tạo 1 object trống Fruit, sau đó set value từ màn hình vào object này!!!
+    //và gọi hàm
+
+    //LÀM TRƯỚC PHẦN EDIT CÁI ĐÃ
+
+    Fruit obj = new Fruit();  //hứng value từ ô text thả vào object chuẩn bị xuống table
+   
+    obj.Name = NameTextBox.Text;
+    obj.Description = DescTextBox.Text;
+    obj.Price = decimal.Parse(PriceTextBox.Text);
+    
+    //obj.CategoryId = EditedOne.CategoryId; //FK
+    //LẤY ĐÚNG FK ĐANG ĐC CHỌN TRÊN COMBOBOX, CHỨ KO ĐC LẤY TỪ EDITED-ONE DO ĐANG LÀ THỨ CŨ
+    //CHUYỂN TỪ MÀN HÌNH MAIN SANG, HOẶC ĐANG LÀ NULL Ở TẠO MỚI
+    //TA LẤY CATE MỚI TỪ DANH SÁCH CHỌN, KO CARE MODE 
+    obj.CategoryId = (int)CateComboBox.SelectedValue;
+
+
+    //CHECK MODE - NẾU EDIT HOẶC TẠO MỚI, THÌ GỌI ĐÚNG HÀM CỦA BÊN CTX
+    //DÙNG BIẾN FLAG EDITEDONE
+    if (EditedOne != null)
+    {
+        obj.Id = int.Parse(IdTextBox.Text);
+        _ctx.Fruits.Update(obj);
+    }
+    else
+    {
+        obj.Id = null;
+        _ctx.Fruits.Add(obj);
+    }
+    _ctx.SaveChanges();
+
+    this.Close(); //đóng cửa sổ này lại!!!!!!!!!!, kế thừa hàm Close() từ Cha Window
+
+    //ctx.Fruits.Add(EditedOne);
+    //ctx.Fruits.Update(EditedOne);
+    //ctx.SaveChanges();
+}
+keep
+Pinned
+
+Trường An
+4:56 PM
+thầy ơi hàm delete xoá fruit xong thì id đó bị trống không bao h thêm lại được hả thầy
+
+Ho Thanh Phuong (K18 HCM)
+5:01 PM
+thầy ơi xíu thầy rảnh không, tại vì em muốn nói chuyện riêng với thầy 1 xíu ấy
