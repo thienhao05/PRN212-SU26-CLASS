@@ -71,6 +71,17 @@
         //svm tab
         static void Main(string[] args)
         {
+            //y chang: yob là 1 con số y nguyên bất kì nào đó
+            //          có hình dạng là nguyên con
+            //          nay yob mang giá trị 2005
+            int yob = 2005;
+
+
+            //viethub: f là 1 hàm bất kì nào đó
+            //          nhưng có hình dạng void(string, string)
+            //       và nay f là hàm SendSms ở dưới
+            
+
             Notification f = SendSms;
 
             f += SendEmail; //int a = 5; a += 10; 
@@ -81,6 +92,11 @@
             //biểu thức landa
 
         }
+        
+        //CHALLENGE: TUI MUỐN CÓ 1 HÀM GỬI TIN NHẮN QUA WHATSAPP
+        //ID, MESSAGE, TO MESSI, MESSAGE???
+        //THẦY HOÀNG CÓ MẶT TẠI TRƯỜNG LÚC 7 GIỜ KÉM 10
+
 
         public static void SendSms(string phone, string msg) 
         {
