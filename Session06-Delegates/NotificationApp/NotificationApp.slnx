@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DelegateTester.V2/DelegateTester.V2.csproj" Id="3079695b-c622-4fde-9d43-33a113f7466e" />
+  <Project Path="DelegateTester.V3Anonymous/DelegateTester.V3Anonymous.csproj" Id="714d7925-b19f-410b-8366-9ab7104a914d" />
+  <Project Path="DelegateTester/DelegateTester.csproj" />
+  <Project Path="DelegateTesterLambdaExpression/DelegateTesterLambdaExpression.csproj" Id="851a6206-786b-40cf-beeb-07716e11ec86" />
+</Solution>
