@@ -1,0 +1,135 @@
+=====================================================
+GIẢI NGỐ DELEGATES
+=====================================================
+- FOR DUMMIES
+- CHEATSHEETS
+
+=====================================================
+0. CHUYỆN TÌNH TAY 3
+
+
+I. WHAT IS DELEGATES
+
+
+
+II. HOW, WHEN TO USE IT ?
+
+=====================================================
+0. CHUYỆN TÌNH TAY 3
+
+* 3 KHÁI NIỆM ĐI KÈM NHAU: BIẾN, GIÁ TRỊ, KIỂU DỮ LIỆU
+			   VARIABLE, VALUE, DATATYPE
+
+- BIẾN LÀ TÊN GỌI RIÊNG CHO 1 GIÁ TRỊ VÀ NÓ THUỘC VỀ 1 NHÓM NÀO, BIẾN (KÈM VALUE)
+ĐC CHIA, GOM, GÁN VỀ 1 NHÓM NÀO ĐÓ!
+
+* VÍ DỤ: 
+
+variable   value				nhóm - data type
+tên gọi    giá trị
+-------    -------
+yob     =   2005 			| 
+siSo    =   35				| => THUỘC NHÓM SỐ KO LẺ MIẾNG NÀO, NGUYÊN CON
+ngay    =   13				| 			GỌI CHUNG LÀ INTEGER, int
+soLuong =   5 (lon bò húc)		| 
+
+pi      =   3.14			|
+g       =   9.8				| => THUỘC NHÓM LẺ MIẾNG, KO NGUYÊN CON
+c       =   299.??? (tốc độ ánh sáng)	|		GỌI CHUNG LÀ DOUBLE, FLOAT
+price   =   50.5$			|
+total   =   999.999,5đ			|
+discount =  0.1 (10%)			|
+
+
+sếp = {name: "NGUYỄN THANH TÙNG", 
+	yob: 1994, 
+	province: "Thái Bình",
+	hits: [{...}, {Come my way}, Chúng ta ko thuộc về PE]
+	nick: SonTung MTP       
+       }
+
+chipu = {name: "NGUYỄN THÙY CHI",
+	yob: 1993,
+	province: "Hà Nội",
+	hits: [..., Anh ơi anh ở lại môn đi],
+	nick: ChiPu
+	}
+
+-----------------------------------------------------------------------------> THUỘC NHÓM Singer, Artist
+
+>>>>>>>> CHỐT HẠ: 
+DATA-TYPE BIẾN = VALUE;               biến mang value gì đó và thuộc về nhóm - data type
+int       yob  = 2005;
+double    pi   = 3.14;
+Singer    sep  = new Singer(?, ?, ?);
+Singer    chiPu = new Singer(?, ?, ?);
+
+Note: 
+- Cứ có 1 đống value
+5, 10, 15, 20, 25, 30,...
+- gọi là int
+- đặt cho mỗi đứa 1 các nickname a 
+- int a = 5;
+- {Nguyễn Thanh Tùng}, {Nguyễn Thùy Chi}, {...} => Nghe Singer
+
+
+
+public class Singer 
+{
+    public String Nick { get; set; } 
+    private String FullName { get; set; }
+    private int Yob { get; set; }
+    //..........
+}
+
+//object initialize
+Singer mrDam = new()
+{
+     Nick = "Mr.Đàm", 
+     FullName = "Huỳnh Minh Hưng",
+}
+
+int    yob = 2005;
+double gpa = 9.8;
+
+>>>> NẾU QUANH TA CÓ 1 ĐỐNG "VALUE" LÀ NHỮNG CÁI HÀM NÀO ĐÓ, TIẾP CẬN STYLE TÌNH TAY BA, THÌ NÓ RA SAO
+
+
+biến 		value				data type
+
+f1	=	void SendSms(String phone, String msg)                |
+		{
+			cw(...);                                      |    public class ???
+		}							   {
+								               ....._tenHam
+									            _traVe
+										    _thamSo
+
+f2	=	void SendEmail(String email, String content)          |    }	    _body
+		{
+			cw(...);                                      |
+		}
+
+f3	=	void SendWhatsApp(String id, String msg)
+		{
+			cw(...);
+		}
+
+
+const yob = 2005;
+yob = 2006;
+
+============================> 
+
+??? f1 = void SendSms(String phone, String msg)         |
+		{  					|
+			cw(...);                        |          
+		}					|
+
+public delegate void Notification(String to, string message) 
+Notification là tên gọi chung cho đám hàm void nào đó mà có 2 tham số String, String
+
+
+CLASS STYLE MỚI, ĐẠI DIỆN CHO 1 NHÓM HÀM
+
+Notification f1 = hàm nào cùng nhóm thì đưa tên nó vào đây!!!!!
