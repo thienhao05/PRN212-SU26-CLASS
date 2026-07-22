@@ -1,0 +1,70 @@
+﻿<Window x:Class="Giaolang.DieuDao.GUI.DetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Giaolang.DieuDao.GUI"
+        mc:Ignorable="d"
+        Title="DetailWindow" Height="450" Width="800" Background="#d7837f" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="355" Margin="36,69,0,0" Stroke="Black" VerticalAlignment="Top" Width="606"
+                   Fill="#ff6e4a"
+                   RadiusX="10"
+                   RadiusY="10"
+                   />
+
+        <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Height="34" Margin="667,69,0,0" VerticalAlignment="Top" Width="104"
+                FontSize="20"
+                FontWeight="Bold"
+                Background="#9b111e"
+                Foreground="#ffff00" Click="SaveButton_Click"
+                />
+
+        <ComboBox x:Name="CateComboBox" HorizontalAlignment="Left" Height="31" Margin="205,377,0,0" VerticalAlignment="Top" Width="300"
+                  FontSize="20"
+                  FontWeight="Bold"
+                  />
+
+        <Label Content="View fruit" HorizontalAlignment="Left" Height="64" Margin="36,0,0,0" VerticalAlignment="Top" Width="606" FontSize="40" FontWeight="Bold" Foreground="Yellow" x:Name="FormModeLabel"/>
+
+        <Label Content="Id: " HorizontalAlignment="Left" Height="38" Margin="144,94,0,0" VerticalAlignment="Top" Width="38"
+               FontWeight="Bold" FontSize="20" RenderTransformOrigin="1.35,0.227"/>
+
+        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Height="38" Margin="206,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299"
+                 FontSize="20"
+                 FontWeight="Bold"
+                 Foreground="DarkRed"
+                 />
+        <Label Content="Name: " HorizontalAlignment="Left" Height="38" Margin="108,169,0,0" VerticalAlignment="Top" Width="74"
+            FontWeight="Bold" FontSize="20" RenderTransformOrigin="1.35,0.227"/>
+        <Label Content="Description: " HorizontalAlignment="Left" Height="38" Margin="60,240,0,0" VerticalAlignment="Top" Width="122"
+            FontWeight="Bold" FontSize="20" RenderTransformOrigin="1.35,0.227"/>
+        <Label Content="Price: " HorizontalAlignment="Left" Height="38" Margin="101,309,0,0" VerticalAlignment="Top" Width="75"
+            FontWeight="Bold" FontSize="20" RenderTransformOrigin="1.35,0.227"/>
+        <Label Content="Category: " HorizontalAlignment="Left" Height="38" Margin="78,366,0,0" VerticalAlignment="Top" Width="120"
+            FontWeight="Bold" FontSize="20" RenderTransformOrigin="1.35,0.227"/>
+
+        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="38" Margin="206,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299"
+            FontSize="20"
+            FontWeight="Bold"
+            Foreground="DarkRed"
+                 />
+        <TextBox x:Name="DescTextBox" HorizontalAlignment="Left" Height="40" Margin="206,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299"
+            FontSize="20"
+            FontWeight="Bold"
+            Foreground="DarkRed"
+                 />
+        <TextBox x:Name="PriceTextBox" HorizontalAlignment="Left" Height="41" Margin="210,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"
+            FontSize="20"
+            FontWeight="Bold"
+            Foreground="DarkRed"
+                />
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Height="34" Margin="667,131,0,0" VerticalAlignment="Top" Width="104"
+            FontSize="20"
+            FontWeight="Bold"
+            Background="#9b111e"
+            Foreground="#ffff00" Click="CancelButton_Click"
+                />
+
+    </Grid>
+</Window>
