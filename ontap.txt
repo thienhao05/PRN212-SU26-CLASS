@@ -1,0 +1,96 @@
+ÔN LẠI VỀ DELEGATE
+
+I. DELEGATE LÀ GÌ?
+
+1. ĐỊNH NGHĨA: DELEGATE LÀ TÊN GỌI CHUNG CHO 1 NHÓM HÀM ĐỒNG DẠNG 
+   NHIỀU HÀM CÓ CÙNG HÌNH DẠNG ĐẶT CHO 1 TÊN CHUNG
+* HẬU TRƯỜNG DELEGATE CHÍNH LÀ TẠO 1 CLASS DÙNG ĐỂ BIỂU DIỄN CÁC HÀM
+
+2. CÚ PHÁP:
+public delegate data-type-trả-về-của-nhóm-hàm Tên-Nhóm-Hàm(các-tham-số-của-nhóm-hàm)
+
+
+3. VÍ DỤ
+
+//vietsub: NotiFunc là nhóm hàm ko có đầu vào và ko trả về gì cả
+
+public delegate void NotiFunc(string msg);  
+//vietsub: NotiFunc là nhóm hàm nhận vào 1 chuỗi và ko trả về gì cả
+		
+public delegate int CalculationFunc(int n);  
+//vietsub: CalculationFunc là nhóm hàm nhận vào 1 con int, trả về 1 con int 
+
+DELEGATE: CHỈ QUAN TÂM ĐẦU VÀO, ĐẦU RA; KO QUAN TÂM THÂN HÀM, TRONG HÀM LÀM GÌ KO CARE
+
+II. SỬ DỤNG DELEGATE
+* CÓ NHIỀU CÚ PHÁP, CÁCH DÙNG DELEGATE
+1. TRUYỀN THỐNG, DELEGATE ĐẠI DIỆN CHO HÀM LẺ CỤ THỂ
+public delegate void NotiFunc();  
+
+NotiFunc f1 = ??? cần 1 hàm lẻ cụ thể đâu đó;
+
+public static void ShowHello()
+{
+   cw("Hello");
+}  
+
+NotiFunc f1 = ShowHello; //ko ngoặc tròn nhen!!! cần 1 hàm lẻ cụ thể đâu đó;
+NotiFunct f2 = new (ShowHello);
+
+f1() run f1 cũng chính là run ShowHello();
+f1.invoke() cũng là tương đương, run hàm ShowHello();
+
+2. HIỆN ĐẠI, DELEGATE ĐẠI DIỆN CHO 1 HÀM ĐÃ BÁN MÌNH, BÁN CẢ TÊN GỌI ANONYMOUS FUNCTION
+
+public delegate void NotiFunc();  
+
+NotiFunc f1 = delegate() 
+		{
+		    cw("Hello");
+		};
+
+f1(); //như cũ, hàm lẻ xóa mẹ tên đi rồi, xài ké tên f1
+
+
+3. HIỆN ĐẠI, DELEGATE ĐẠI DIỆN CHO 1 HÀM ĐÃ BÁN MÌNH, BÁN CẢ TÊN GỌI BÁN ĐẾN MỨC CHỈ CÒN CÁI DÂY NỊT -> LAMBDA EXPRESSION BIỂU THỨC LAMBDA
+
+NotiFunc f1 = () => 
+		{
+		    cw("Hello");
+		};
+
+NotiFunc f1 = () => cw("Hello");
+
+f1(); //như cũ, hàm lẻ xóa mẹ tên đi rồi, xài ké tên f1
+
+
+public delegate void NotiFunc(string msg);   
+
+//viết cho tui 1 hàm nhận vào chuỗi "PE sít đát" và in nó ra
+
+NotiFunc f2 = (string x) => { 
+				cw(x); 
+			    };
+
+NotiFunc f2 = (string x) => { cw(x); };
+
+
+NotiFunc f2 = x => cw(x); //hàm nhận vào x và in ra x
+
+
+VIẾT CHO TUI 1 HÀM NHẬN VÀO SỐ THỰC ĐẠI DIỆN MÓN TIỀN BẠN RÚT TỪ TÀI KHOẢN VÀ IN RA CÂU NHƯ SAU: 
+
+//QUÝ KHÁCH VỪA RÚT XXX ĐỒNG !!! XXX CHÍNH LÀ SỐ TIỀN BẠN RÚT
+
+public delegate void BankNotiFunc(double amount);
+
+BankNotiFunc t = amount => Console.WriteLine($"Quý khách vừa rút {amount} vnđ");
+
+t(500); //màn hình sẽ in? Quý khách vừa rút 500000 vnđ
+
+
+
+
+
+
+
