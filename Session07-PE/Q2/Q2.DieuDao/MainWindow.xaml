@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Q2.DieuDao"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="FruitDataGrid" HorizontalAlignment="Left" Height="129" Margin="51,43,0,0" VerticalAlignment="Top" Width="367" />
+        <DataGrid x:Name="FruitDataGrid" HorizontalAlignment="Left" Height="149" Margin="51,23,0,0" VerticalAlignment="Top" Width="588" SelectionChanged="FruitDataGrid_SelectionChanged" />
 
         <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Height="24" Margin="51,200,0,0" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Width="49"/>
 
@@ -20,10 +20,10 @@
         <ComboBox x:Name="CatesComboBox" HorizontalAlignment="Left" Height="24" Margin="512,200,0,0" VerticalAlignment="Top" Width="127"/>
 
         <Button x:Name="NewButton" Content="New" HorizontalAlignment="Left" Height="39" Margin="51,251,0,0" VerticalAlignment="Top" Width="89"/>
-        
+
         <Button x:Name="EditButton" Content="Edit" HorizontalAlignment="Left" Height="39" Margin="184,251,0,0" VerticalAlignment="Top" Width="89"/>
-        
-        
+
+
 
 
     </Grid>

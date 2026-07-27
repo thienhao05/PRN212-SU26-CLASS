@@ -23,7 +23,7 @@ public partial class Su26DieuDaoContext : DbContext
     public virtual DbSet<Fruit> Fruits { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(GetConnectionString());
+        => optionsBuilder.UseSqlServer(GetConnectionString()); //expression body
 
     private string GetConnectionString()
     {
@@ -32,7 +32,7 @@ public partial class Su26DieuDaoContext : DbContext
             .AddJsonFile("appsettings.json", true, true)
             .Build();
 
-        return config.GetConnectionString("DefaultConnectionStringDB")
+        return config["ConnectionStrings:DefaultConnectionStringDB"]
             ?? throw new InvalidOperationException(
                 "Connection string DefaultConnectionStringDB not found."
             );
