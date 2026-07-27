@@ -31,6 +31,7 @@ class Account
         "Quý khác vừa rút amount vnđ"
         //CẤM XÀI cw trong hàm rút tiền
         //NHỜ HÀM KHÁC IN GIÚP - DELEAGATE IN GIÚP
+        //CALLBACK!!!!!!!!!!!!!!!!
     }
 
 }
