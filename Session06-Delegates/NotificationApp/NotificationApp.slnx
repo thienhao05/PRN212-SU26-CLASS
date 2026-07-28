@@ -4,4 +4,5 @@
   <Project Path="DelegateTester/DelegateTester.csproj" />
   <Project Path="DelegateTesterLambdaExpression/DelegateTesterLambdaExpression.csproj" Id="851a6206-786b-40cf-beeb-07716e11ec86" />
   <Project Path="DelegateTesterLambdaExpressionFinal/DelegateTesterLambdaExpressionFinal.csproj" Id="2609d91d-a93e-4818-99e2-0d25577054f7" />
+  <Project Path="PEReady/PEReady.csproj" Id="3d6c2b52-09ba-44ff-8c3d-b7ae755ef198" />
 </Solution>
